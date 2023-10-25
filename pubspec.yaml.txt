@@ -1,0 +1,19 @@
+name: stock_price_chart
+description: A Flutter app to display stock price data.
+version: 1.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.3
+  fl_chart: ^0.40.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
