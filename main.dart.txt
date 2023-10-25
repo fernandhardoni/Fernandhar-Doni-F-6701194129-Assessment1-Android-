@@ -17,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   List<double> stockData = [];
 
   Future<void> fetchData() async {
-    final response = await http.get(
-        "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?adjusted=true&sort=asc&limit=120&apiKey=gwCZOLQwD7mD16qnO93FDaHkmk87Xar4");
+    final response = await http.get( "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?adjusted=true&sort=asc&limit=120&apiKey=gwCZOLQwD7mD16qnO93FDaHkmk87Xar4");
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -26,7 +25,6 @@ class _MyAppState extends State<MyApp> {
         stockData = List.from(data["results"]).map((e) => e["l"].toDouble()).toList();
       });
     } else {
-      // Handle error
       print("Failed to fetch data");
     }
   }
