@@ -13,11 +13,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String stockSymbol = "AAPL";
+  String stockSymbol = "DONI";
   List<double> stockData = [];
 
   Future<void> fetchData() async {
-    final response = await http.get( "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?adjusted=true&sort=asc&limit=120&apiKey=gwCZOLQwD7mD16qnO93FDaHkmk87Xar4");
+    final response = await http.get( "https://api.polygon.io/v2/aggs/ticker/DONI/range/1/day/2023-09-01/2023-09-30?adjusted=true&sort=asc&limit=120&apiKey=gwCZOLQwD7mD16qnO93FDaHkmk87Xar4");
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
